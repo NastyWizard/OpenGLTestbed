@@ -13,10 +13,10 @@ void MeshPrimitives::Create2DRect(float width, float height, std::vector<float> 
 
 	float uvs[] =
 	{
-		1.0f, 1.0f-1.0f,
-		1.0f, 1.0f-0.0f,
-		0.0f, 1.0f-0.0f,
-		0.0f, 1.0f-1.0f
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f
 	};
 
 	float normals[] = 
@@ -50,5 +50,32 @@ void MeshPrimitives::Create2DRect(float width, float height, std::vector<float> 
 
 	for (int i = 0; i < 6; i++)
 		indexArray.push_back(indices[i]);
+
+}
+
+void MeshPrimitives::CreateBox(float width, float height, float length, std::vector<float>& vertArray, std::vector<unsigned int>& indexArray, std::vector<float>& uvArray, std::vector<float>& normalArray)
+{
+	float vertices[] =
+	{
+		// front
+		width / 2.0f,	height / 2.0f,	length / 2.0f, // top right
+		width / 2.0f,	-height / 2.0f,	length / 2.0f, // bottom right
+		-width / 2.0f,	-height / 2.0f,	length / 2.0f, // bottom left
+		-width / 2.0f,	height / 2.0f,	length / 2.0f,  // top left
+
+		// back
+		width / 2.0f,	height / 2.0f,	-length / 2.0f, // top right
+		width / 2.0f,	-height / 2.0f,	-length / 2.0f, // bottom right
+		-width / 2.0f,	-height / 2.0f,	-length / 2.0f, // bottom left
+		-width / 2.0f,	height / 2.0f,	-length / 2.0f  // top left
+	};
+
+	float uvs[] =
+	{
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f
+	};
 
 }
