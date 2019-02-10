@@ -83,6 +83,7 @@ void Mesh::SetMesh(Primitive type)
 	case Mesh::CIRCLE:
 		break;
 	case Mesh::CUBE:
+		MeshPrimitives::CreateBox(2, 2, 2, vertices, indices, uvs, normals);
 		break;
 	default:
 		break;

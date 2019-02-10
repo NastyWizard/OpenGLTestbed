@@ -12,7 +12,7 @@ TestScene::TestScene() : Scene("TestScene")
 	testTex2 = new Texture("Textures/test.png");
 
 	Mesh* mesh = new Mesh();
-	mesh->SetMesh(Mesh::RECT);
+	mesh->SetMesh(Mesh::CUBE);
 	testObj = new Object("test",mat,mesh);
 	testObj->transform.position = vec3(0.f, 0.f, 0.f);
 	testObj->transform.scale = vec3(1.f);
